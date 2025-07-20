@@ -103,18 +103,25 @@ cart.$subscribe((mutation, state) => {
 .order-confirmation-dialog {
   background-color: hsl(var(--color-background-accent));
   padding: var(--space-300);
-  border-radius: var(--br-300);
+  border-start-end-radius: var(--br-300);
+  border-start-start-radius: var(--br-300);
   border: 0;
 
   --dialog-inline-size-max: 592px;
-  --dialog-gutter: 0px;
-  inline-size: min(var(--dialog-inline-size-max), 100% - 2 * var(--dialog-gutter));
-  margin-inline: auto;
+  --dialog-gutter: var(--space-200);
+  max-inline-size: 100%;
+  block-size: calc(100% - 95px);
+  margin: 0;
+  top: 95px;
 }
 
 @media (min-width: 24rem) {
   .order-confirmation-dialog {
-    --dialog-gutter: var(--space-200);
+    top: 0;
+    block-size: min-content;
+    inline-size: min(var(--dialog-inline-size-max), 100% - 2 * var(--dialog-gutter));
+    margin: auto;
+    border-radius: var(--br-300);
   }
 }
 
