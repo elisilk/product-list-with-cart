@@ -25,9 +25,9 @@ export const useCartStore = defineStore('cart', {
     },
     getItemCount: (state) => {
       return (itemName) => {
-        const item = state.items.find((item) => item.name === itemName)
-        if (!item) return 0
-        return item.quantity
+        const foundItem = state.items.find((item) => item.name === itemName)
+        if (!foundItem) return 0
+        return foundItem.quantity
       }
     },
   },
