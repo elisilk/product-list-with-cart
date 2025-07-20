@@ -47,8 +47,14 @@ cart.$subscribe((mutation, state) => {
         <div class="order-confirmation__items">
           <ul>
             <li class="order-confirmation__item" v-for="item in cart.items" :key="item.name">
-              <div class="item__thumbnail">img</div>
-              <div class="item__name text-preset4-bold">{{ item.name }}</div>
+              <img
+                class="item__thumbnail"
+                :src="getImageUrl(item.thumbnail)"
+                width="48"
+                height="48"
+                :alt="item.name"
+              />
+              <span class="item__name text-preset4-bold">{{ item.name }}</span>
               <span class="item__quantity text-preset4-bold">{{ item.quantity }}x</span>
               <span class="item__unit-price text-preset4"
                 >@
@@ -121,8 +127,13 @@ cart.$subscribe((mutation, state) => {
   background-color: hsl(var(--color-black) / 50%);
 }
 
+.order-confirmed-icon {
+  margin-block-end: var(--space-300);
+}
+
 .order-confirmation-dialog__heading {
   color: hsl(var(--color-heading));
+  margin-block-end: var(--space-100);
 }
 
 .order-confirmation-dialog__text {

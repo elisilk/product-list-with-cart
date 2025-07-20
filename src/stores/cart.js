@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 
 export const useCartStore = defineStore('cart', {
   state: () => ({
-    /** @type {{ name: string, price: number, quantity: number }[]} */
+    /** @type {{ name: string, price: number, quantity: number, thumbnail: string }[]} */
     items: [],
     /** @type {'in-progress' | 'confirmed'} */
     status: 'in-progress',
@@ -32,10 +32,11 @@ export const useCartStore = defineStore('cart', {
     },
   },
   actions: {
-    addItem(name, price) {
+    addItem(name, price, thumbnail) {
       if (!this.isInProgress) return
       const index = this.items.findIndex((item) => item.name === name)
-      if (index === -1) this.items.push({ name: name, price: price, quantity: 1 })
+      if (index === -1)
+        this.items.push({ name: name, price: price, quantity: 1, thumbnail: thumbnail })
       else this.items[index].quantity++
     },
     removeItem(name) {

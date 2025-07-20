@@ -16,6 +16,10 @@ const props = defineProps({
     type: Number,
     required: true,
   },
+  thumbnail: {
+    type: String,
+    required: true,
+  },
 })
 
 const itemIsInCart = computed(() => {
@@ -29,7 +33,7 @@ const itemCountInCart = computed(() => {
 
 <template>
   <div v-if="!itemIsInCart" class="add-to-cart-button__container">
-    <button @click="cart.addItem(name, price)" class="add-to-cart-button" type="button">
+    <button @click="cart.addItem(name, price, thumbnail)" class="add-to-cart-button" type="button">
       <IconAddToCartButton />
       <span class="text-preset4-bold">Add to Cart</span>
     </button>

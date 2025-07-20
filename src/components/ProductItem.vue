@@ -28,7 +28,7 @@ const itemIsInCart = computed(() => {
   >
     <div class="product-item__header">
       <ProductImage :images="item.image" :alt="item.name" />
-      <AddToCartButton :name="item.name" :price="item.price" />
+      <AddToCartButton :name="item.name" :price="item.price" :thumbnail="item.image.thumbnail" />
     </div>
     <div class="product-item__main">
       <span class="product-item__category text-preset4">{{ item.category }}</span>

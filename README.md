@@ -107,8 +107,8 @@ As always, so many cool :sunglasses: things. Here are some of the key resources 
 Specific areas that the solution should be improved (known issues):
 
 - [ ] Add thumbnail images of each item to the order confirmation dialog
-- [ ] Block spacing for header section of the order confirmation dialog
 - [ ] Gutter spacing and positioning for the order confirmation dialog in the different viewport sizes
+- [x] Block spacing for header section of the order confirmation dialog
 - [x] Fix so that dialog does not go away without clicking the "Start New Order" button so that the state properly resets, maybe use the [`dialog`'s `closedby` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog#closedby)?
 
 More general ideas I want to consider:
