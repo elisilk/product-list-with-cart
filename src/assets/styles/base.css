@@ -1,0 +1,182 @@
+/* -------------------- */
+/* Breakpoints          */
+/* -------------------- */
+
+/* Media query breakpoints (min-widths) */
+
+/* 24rem = 384px -- mobile -> tablet */
+/* 44rem = 704px -- mobile -> tablet/desktop */
+/* 64rem = 1024px -- tablet -> desktop */
+
+/* -------------------- */
+/* Fonts                */
+/* -------------------- */
+
+@font-face {
+  font-family: 'Red Hat Text';
+  font-style: normal;
+  font-weight: 400 600 700;
+  font-display: swap;
+  src: url('@/assets/fonts/RedHatText-VariableFont_wght.woff2') format('woff2');
+}
+
+/* -------------------- */
+/* Custom properties    */
+/* -------------------- */
+
+/* general design system properties */
+:root {
+  /* color palette */
+  --color-white: 0 0% 100%; /* hex ffffff / rgb 255 255 255 */
+  --color-black: 0 0% 0%; /* hex 000000 / rgb 0 0 0 */
+
+  --color-red: 14 86% 42%; /* hex c73b0f / rgb 199 59 15 */
+  --color-green: 159 69% 38%; /* hex 1ea575 / rgb 30 165 117 */
+
+  --color-red-900: 14 86% 31%;
+
+  --color-rose-900: 14 65% 9%;
+  --color-rose-500: 12 20% 44%;
+  --color-rose-400: 7 20% 60%;
+  --color-rose-300: 14 25% 72%;
+  --color-rose-100: 13 31% 94%;
+  --color-rose-50: 20 50% 98%;
+
+  /* font-families */
+  --ff-base: 'Red Hat Text', sans-serif;
+
+  /* font-weights */
+  --fw-regular: 400;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+
+  /* font-sizes */
+  --fs-600: 2.5rem; /* 40px */
+  --fs-500: 1.5rem; /* 24px */
+  --fs-400: 1rem; /* 16px */
+  --fs-300: 0.875rem; /* 14px */
+
+  /* border-radii */
+  --br-100: 0.25rem; /* 4px */
+  --br-200: 0.5rem; /* 8px */
+  --br-300: 0.75rem; /* 12px */
+  --br-900: 999px; /* 999px */
+
+  /* spacing */
+  --space-1100: 5.5rem; /* 88px */
+  --space-500: 2.5rem; /* 40px */
+  --space-400: 2rem; /* 32px */
+  --space-300: 1.5rem; /* 24px */
+  --space-200: 1rem; /* 16px */
+  --space-150: 0.75rem; /* 12px */
+  --space-100: 0.5rem; /* 8px */
+  --space-50: 0.25rem; /* 4px */
+}
+
+/* -------------------- */
+/* Reset                */
+/* -------------------- */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ol,
+ul,
+figure,
+picture {
+  margin: 0;
+}
+
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* make images easier to work with */
+img,
+svg,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* -------------------- */
+/* Body Setup           */
+/* -------------------- */
+
+body {
+  min-inline-size: 20rem; /* 320px */
+  min-block-size: 100vb;
+}
+
+/* -------------------- */
+/* Layout               */
+/* -------------------- */
+
+.with-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sidebar-gap, 0px);
+}
+
+.with-sidebar > :last-child {
+  flex-basis: var(--sidebar-side-inline-size, auto);
+  flex-grow: 1;
+}
+
+.with-sidebar > :first-child {
+  flex-basis: 0;
+  flex-grow: 999999;
+  min-inline-size: var(--sidebar-main-inline-size-min, 50%);
+}
+
+/* -------------------- */
+/* Flow                 */
+/* -------------------- */
+
+.flow > * + * {
+  margin-block-start: var(--flow-space);
+}
+
+.flow > * + :is(h1, h2, h3) {
+  margin-block-start: var(--space-500);
+}
+
+.flow > * + .flow--large,
+.flow > .flow--large + * {
+  margin-block-start: var(--space-500);
+}
+
+/* -------------------- */
+/* Utility classes      */
+/* -------------------- */
+
+/* screen reader only */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
