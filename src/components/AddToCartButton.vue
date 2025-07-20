@@ -72,6 +72,7 @@ const itemCountInCart = computed(() => {
   outline: none;
   border: 1px solid hsl(var(--color-rose-400));
   background: hsl(var(--color-white));
+  color: hsl(var(--color-heading));
   cursor: pointer;
   border-radius: var(--br-900);
   padding: var(--space-150);
