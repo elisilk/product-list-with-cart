@@ -20,10 +20,6 @@ defineExpose({
   close: closeDialog,
 })
 
-function closeFromEvent(event) {
-  if (event.currentTarget === event.target) closeDialog()
-}
-
 function getImageUrl(url) {
   return new URL(`../assets/images/${url}`, import.meta.url).href
 }
@@ -34,7 +30,7 @@ cart.$subscribe((mutation, state) => {
 </script>
 
 <template>
-  <dialog ref="order-confirmation-dialog" class="order-confirmation-dialog" @click="closeFromEvent">
+  <dialog ref="order-confirmation-dialog" class="order-confirmation-dialog" closedby="none">
     <div class="order-confirmation-dialog__inner">
       <div class="order-confirmation__header">
         <img

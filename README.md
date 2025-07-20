@@ -106,13 +106,21 @@ As always, so many cool :sunglasses: things. Here are some of the key resources 
 
 Specific areas that the solution should be improved (known issues):
 
+- [ ] Add thumbnail images of each item to the order confirmation dialog
+- [ ] Block spacing for header section of the order confirmation dialog
+- [ ] Gutter spacing and positioning for the order confirmation dialog in the different viewport sizes
+- [x] Fix so that dialog does not go away without clicking the "Start New Order" button so that the state properly resets, maybe use the [`dialog`'s `closedby` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog#closedby)?
+
 More general ideas I want to consider:
 
 Hmm 🤔 ...
 
+- What D-R-Y improvements can I make? Seems like there is repetition across the individual items in the cart and in the order confirmation dialog, so can those be made into a component that could be reused for both? What other aspects should be made into their own component?
+
 ### Useful resources
 
 - [Vue Guide](https://vuejs.org/guide/)
+- [Pinia Guide](https://pinia.vuejs.org/core-concepts/)
 - [Vite Guide](https://vite.dev/guide/)
 - [MDN Web Docs for CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - Went here a lot to reference the different CSS properties and the shorthands, and all the great explanations about best practices.
 
